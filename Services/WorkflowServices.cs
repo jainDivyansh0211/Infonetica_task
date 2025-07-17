@@ -63,7 +63,6 @@ public class WorkflowService : IWorkflowService
         return _storage.GetInstance(id);
     }
 
-    // Helper methods
     private WorkflowDefinition GetDefinitionOrThrow(string id)
     {
         var definition = _storage.GetDefinition(id);
@@ -93,6 +92,7 @@ public class WorkflowService : IWorkflowService
         instance.History.Add(historyEntry);
     }
 
+    // Comprehensive validation for workflow definitions
     private static void ValidateDefinition(WorkflowDefinition definition)
     {
         ThrowIfEmptyId(definition.Id, "Definition ID");
@@ -103,6 +103,7 @@ public class WorkflowService : IWorkflowService
         ThrowIfActionsReferenceInvalidStates(definition);
     }
 
+    // Runtime validation before executing actions
     private static void ValidateActionExecution(WorkflowInstance instance, Models.Action action, WorkflowDefinition definition)
     {
         ThrowIfActionDisabled(action);
@@ -110,7 +111,7 @@ public class WorkflowService : IWorkflowService
         ThrowIfInstanceInFinalState(instance, definition);
     }
 
-    // Validation helper methods
+    // Validation helper methods with clear error messages
     private static void ThrowIfEmptyId(string id, string fieldName)
     {
         if (string.IsNullOrWhiteSpace(id))
@@ -146,6 +147,7 @@ public class WorkflowService : IWorkflowService
             throw new ArgumentException("Duplicate action IDs found");
     }
 
+    // Ensure all action transitions reference valid states
     private static void ThrowIfActionsReferenceInvalidStates(WorkflowDefinition definition)
     {
         var stateIds = definition.States.Select(s => s.Id).ToHashSet();

@@ -1,6 +1,5 @@
 using Infonetica_task.Services;
 using Infonetica_task.Storage;
-using Microsoft.AspNetCore.HttpsPolicy;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,9 +28,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-// Add some helpful startup logging
 Console.WriteLine("Workflow Engine starting...");
 Console.WriteLine("API Documentation available at: /swagger");
 
 app.Run();
-
