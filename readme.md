@@ -127,7 +127,6 @@ You'll see the current state and complete history of moves!
 
 ---
 
-## 👨‍💻 Built With ❤️ By
-**Divyansh Jain**  
+## 👨‍💻 Built With ❤️ By **Divyansh Jain**  
 IIT Kharagpur '27  
 📧 div0211jain@gmail.com
