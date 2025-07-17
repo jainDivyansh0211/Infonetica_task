@@ -1,4 +1,4 @@
-# workflow-engine
+# Workflow-Engine
 
 [![C#](https://img.shields.io/badge/language-CSharp-blue.svg)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![.NET](https://img.shields.io/badge/framework-.NET_8.0-blueviolet.svg)](https://dotnet.microsoft.com/)
