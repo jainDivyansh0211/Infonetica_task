@@ -1,0 +1,6 @@
+@Infonetica_task_HostAddress = http://localhost:5188
+
+GET {{Infonetica_task_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
